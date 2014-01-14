@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script type="text/javascript">
+
+
+            // Declaramos tres variables
+            var N1, N2, N3;
+            
+            // Ingresamos datos a estas tres variables
+            N1 = prompt('Introduce el primer número', '');
+            N2 = prompt('Introduce el segundo número', '');
+            N3 = prompt('Introduce el tercer número', '');
+
+
+            // Validamos que ninguno que los numeros este vacio
+            if (N1 != null && N1 != '' && N2 != null && N2 != '' && N3 != null && N3 != '')
+            {
+                
+                // Parseamos de string a integer
+                N1 = parseInt(N1);
+                N2 = parseInt(N2);
+                N3 = parseInt(N3);
+
+
+                // Comenzamos a validar cual de los tres numeros es mayor.
+                if (N1 > N2) {
+                    if (N1 > N3) {
+                        alert('Mayor N1=' + N1);
+                    }
+                    else {
+                        alert('Mayor N3=' + N3);
+                    }
+                }
+                else {
+                    if (N2 > N3) {
+                        alert('Mayor N2=' + N2);
+                    }
+                    else {
+                        alert('Mayor N3=' + N3);
+                    }
+                }
+            }
+            // Envia una alerta en caso uno de los numeros este vacio
+            else {
+                alert('Debe introducir tres valores');
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <div>Numero mayor</div>
+    </body>
+</html>

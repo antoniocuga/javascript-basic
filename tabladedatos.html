@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script type="text/javascript">
+
+
+            // Ejemplo de tablas y recorrido de datos
+
+
+            // Declaramos dos variables globales para validar las edades
+            var mayor = 0;
+            var menor = 10000;
+
+            // Declaramos dos arrays que contendran la informacion de la persona
+            //  mayor y menor
+            var personaMayor = new Array();
+            var personaMenor = new Array();
+
+            // Imprimimos un formulario y una tabla
+            document.write("<form>");
+            document.write("<table>");
+            document.write("<tr><td>Nombre</td>");
+            document.write("<td>Apellido</td>");
+            document.write("<td>Edad</td>");
+            document.write("<td>Profesion</td></tr>");
+
+            //Declaramos otro Array con los datos a listar
+            var tablas = new Array(
+                    Array("Antonio", "Cucho", "23", "vago"),
+                    Array("Carlos", "....", "20", "..."),
+                    Array("Miguel", "...", "22", "..."),
+                    Array("Cesar", "...", "21", "..."),
+                    Array("Jorge", "...", "35", "..."),
+                    Array("Lucho", "...", "40", "..."),
+                    Array("Julio", "...", "18", "..."),
+                    Array("Juan", "...", "12", "..."),
+                    Array("Patricia", "...", "56", "...")
+                    );
+
+
+            // Comenzamos el recorrido de la lista
+            for (i = 0; i < tablas.length; i++) {
+
+                //Validamos si la fila es par o impar, 
+                //y agregamos una clase para darle css
+                if (i % 2 == 0) {
+                    document.write("<tr class='par'>");
+                } else {
+                    document.write("<tr class='impar'>");
+                }
+
+                // Declaramos variable edad para validarla
+                var edad = tablas[i][2];
+
+
+                // recorremos cada array obtenido
+                for (x = 0; x < tablas[i].length; x++) {
+
+                    // Obtenemos cada dato del segundo array
+                    var dato = tablas[i][x];
+
+                    // imprimimos una columna de tabla
+                    document.write('<td><input type="text" name="nombre_' + i + '_' + x + '"\n\
+                                        value="' + dato + '"></td>');
+
+                }
+                
+                // Realizamos la validacion de la edad - Mayor
+                if (edad > mayor) {
+                    mayor = edad;
+                    personaMayor = tablas[i];
+                }
+                // Realizamos la validacion de la edad - Menor
+                if (edad < menor) {
+                    menor = edad;
+                    personaMenor = tablas[i];
+                }
+
+                document.write("</tr>");
+            }
+            document.write("</table></form>");
+            
+            // Imprimimos el resultado de la validacion 
+            document.write("La persona mayor es:" + personaMayor[0] + " \n\
+                            y su edad es: " + personaMayor[2] + "<br/>");
+
+            document.write("La persona menor es:" + personaMenor[0] + " \n\
+                            y su edad es: " + personaMenor[2] + "<br/>");
+
+        </script>
+
+        <style type="text/css">
+
+            .par{ background: #c4d3d1;}
+            .impar{ background: #ffffff;}
+
+            td{
+                padding:3px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+    </body>
+</html>

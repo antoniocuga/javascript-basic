@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script type="text/javascript">
+
+            //declarando tres variables de entrada
+            var numero1, numero2, operacion;
+
+
+            //Ingresando datos a las variables previamente asignadas
+            numero1 = prompt("Ingrese numero 1");
+            operacion = prompt("Ingrese operacion");                      
+            numero2 = prompt("Ingrese numero 2");
+
+            //Parseando los datos de tipo cadena a numero entero
+            numero1 = parseInt(numero1);
+            numero2 = parseInt(numero2);
+
+            //Usando condicionales de tipo or ||
+            if (operacion == "+" || operacion == "suma") {
+                alert("Suma: " + (numero1 + numero2));
+            }
+            else if (operacion == "-" && operacion == "resta") {
+                alert("Resta " + (numero1 - numero2));
+            }
+            else if (operacion == "*" && operacion == "multiplicacion") {
+                alert("Multiplicacion " + (numero1 * numero2));
+            }
+            else if (operacion == "/" && operacion == "division") {
+                alert("Division: " + (numero1 / numero2));
+            } 
+            // En caso ninguna de las condiciones previas sea verdadera
+            // Entrada a esta sentecia por defecto
+            else {
+                alert("No ingreso ninguna operacion permitida");
+            }
+
+        </script>
+
+    </head>
+    <body>        
+    </body>
+</html>

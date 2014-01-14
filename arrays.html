@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script>
+
+            // declarando un tipo de dato Array
+            var Lenguajes = new Array();
+
+            // iniciando una variable como contador, valor inicual 0
+            var x = 0;
+
+
+            // recorrido bucle while
+            while (x <= 3) {
+                var valor = prompt("Agregar lenguaje");
+                Lenguajes.push(valor);
+                x++;
+            }
+
+
+            document.write('Total lenguajes es: ' + Lenguajes.length + '<br>');
+
+            // recorriendo array para mostrar los indices
+            for (x in Lenguajes) {
+                document.write('<br>Indice del Array mostrado con for in -  ' + x);
+            }
+            document.write('<br>');
+
+            // Ahora mostramos sus valores
+            for (y = 0; y < Lenguajes.length; y++) {
+                document.write('<br>Lenguaje -  ' + Lenguajes[y]);
+            }
+            document.write('<br>');
+
+            var x = 0;
+
+        </script>
+
+    </head>
+    <body>
+
+    </body>
+</html>
