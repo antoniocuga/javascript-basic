@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <script type="text/javascript">
+
+        /*
+         * Este programa nos permite saber si un año es bisiesto o no
+         * 
+         */
+
+         // Agregamos el año
+        var Anio = prompt("Ingrese año: ");
+        
+        // Validamos el año
+        if ((Anio % 4 == 0 && Anio % 100 != 0) || Anio % 400 == 0) {
+            document.write('Año: ' + Anio + ' si es bisiesto</b>');
+        }
+        else {
+            document.write('<b>Año ' + Anio + ' no es bisiesto</b>');
+        }
+    </script>
+    <body>
+
+    </body>
+</html>

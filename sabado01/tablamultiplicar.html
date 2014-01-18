@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script type="text/javascript">
+
+            /*
+             * Tabla de Multiplicar
+             * 
+             * Ejemplo de bucles y arrays en javascriot
+             * 
+             */
+
+            // Primero declaramos la cantidad de tablas(numeros)
+            var tablas = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+            // Realizamos el primer recorrido
+            for (i = 0; i < tablas.length; i++) {
+
+                // Declaramos una nueva variable que tomara el valor del numero
+                var numero = tablas[i];
+
+                document.write("<ul><li><strong>Tabla del " + numero + ": </strong></li>");
+
+                // Realizamos el segundo recorrido, 
+                for (x = 1; x <= tablas.length; x++) {
+
+                    // Realizamos la multiplicacion del numero obtenido por
+                    // el valor del contador.
+                    var resultado = parseInt(numero) * x;
+
+                    document.write("<li>" + numero + " x " + x + " = " + resultado + "</li>");
+
+                }
+                document.write("</ul>");
+
+            }
+
+
+        </script>
+
+        <style type="text/css">
+
+            ul{ float:left;
+                margin: 3px;}
+        </style>
+
+    </head>
+    <body>        
+    </body>
+</html>

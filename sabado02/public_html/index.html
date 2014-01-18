@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <script type="text/javascript" src="js/dom.js"></script>
+        <style>
+            .dataset-headers td{ with:50px; }
+        </style>
+    </head>
+    <body onload="loadData()">
+
+        <table id="dataset">
+            <tr class="dataset-headers">
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>DNI</td>
+                <td>Direccion</td>
+            </tr>            
+        </table>
+        <br><br>
+        <div id="content-data">
+            <form id="form-data">                
+                <div><label>Nombre:</label><input type="text" name="nombre" id="nom"></div>
+                <div><label>Apellido:</label><input type="text" name="nombre" id="ape"></div>
+                <div><label>DNI:</label><input type="text" name="nombre" id="dni"></div>
+                <div><label>Direccion:</label> <textarea id="dir"></textarea> </div>
+                <input type="hidden" name="iddata" value="" />
+                <div><input type="button" name="sendData" value="Add row" onclick="saveRow()"> </div>
+            </form>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+
+            // Declaramos una funcion agregarDato
+            function agregarDato() {
+
+                //Creamos un array vacio
+                
+                var datos = new Array();
+                
+                // Obtenemos el elemento tabla por su id "dataset"
+                var tabla = document.getElementById("dataset");
+
+                // Obtenemos los valores del formulario agregado
+                datos[0] = document.getElementById("nombre").value;
+                datos[1] = document.getElementById("apellido").value;
+                datos[2] = document.getElementById("edad").value;
+
+                // createElement es una propiedad que nos permite crear 
+                // elementos html, solo es necesario pasarle 
+                // el nombre de la etiqueta
+                
+                // En estecaso creamos una fila de tabla (tr)
+                var fila = document.createElement("tr");
+
+                // Realizamos el recorrido de los datos recojidos del formulario
+                for (i = 0; i < datos.length; i++) {
+
+                    // creamos un elemento de tipo columna de tabla (td)
+                    var columna = document.createElement("td");
+
+                    // Añadimos los datos html a columna, 
+                    // cada dato del formulario recojido
+                    columna.innerHTML = datos[i];
+
+                    // appendChild anida un elemento hijo a un elemento padre
+                    // en este caso el elemento hijo es td y el elemento padre
+                    // es tr, lo añade al final 
+                    
+                    // Añadimos columna a la fila previamente declarada.
+                    fila.appendChild(columna);
+
+                }
+
+                // Finalmente agregamos la fila a la tabla 
+                // obtenida al comienzo del programa
+                tabla.appendChild(fila);
+
+            }
+
+        </script>
+    </head>
+    <body>
+<!--        Declaramos una tabla con id "dataset"-->
+        <table id="dataset">
+            <tr><td>Nombre</td><td>Apellido</td><td>Edad</td></tr>
+        </table>
+
+        <br>
+        <br>
+        
+<!--        Declaramos un fomulario con campos para añadir los datos-->
+        <table id="formdata">
+            <tr><td>Nombre</td><td><input type="text" name="nombre" id="nombre" /></td></tr>
+            <tr><td>Apellido</td><td><input type="text" name="apellido" id="apellido" /></td></tr>
+            <tr><td>Edad</td><td><input type="text" name="edad" id="edad" /></td></tr>
+            <tr><td colspan="2"><input type="button" value="Agregar dato" onclick="agregarDato()" /></td></tr>
+        </table>
+        <a></a>
+
+    </body>
+</html>
