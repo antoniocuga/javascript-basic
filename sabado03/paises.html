@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="js/paises.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+
+                //event.preventDefault();
+
+                $('.load').click(function() {
+
+
+                    msg = paises;
+
+                    $('.load-container').html('');
+
+                    for (var i in msg) {
+
+                        var div = document.createElement('div');
+                        var title = document.createElement('span');
+                        var cod = document.createElement('span');
+
+                        $(title).append(msg[i].name);
+                        $(title).addClass('title-pais');
+                        $(cod).append(msg[i].code);
+                        $(cod).addClass('cod-pais');
+
+                        div.appendChild(title);
+                        div.appendChild(cod);
+                        div.setAttribute('class', 'pais');
+                        console.log(div);
+
+                        $('.load-container').append(div)
+                    }
+
+
+                });
+            });
+
+        </script>
+
+        <style type="text/css">
+
+            .pais{
+
+                width: 120px;
+                height: 120px;
+                padding: 3px;
+                border:solid 1px #000;
+                float: left;
+
+            }
+
+            .title-pais{
+
+                background: #000;
+                color:#FFF;
+                margin: 3px;
+
+            }
+
+            .cod-pais{
+
+                background: #000FFF;
+                color:#FFF000;
+                float: right;
+                margin: 3px;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <a class="load" href="#">Load content</a>
+        <div class="load-container">Loading ... </div>
+    </body>
+</html>
