@@ -32,13 +32,41 @@
                         div.appendChild(title);
                         div.appendChild(cod);
                         div.setAttribute('class', 'pais');
-                        console.log(div);
+                        div.setAttribute('index', i);
+                        //console.log(div);
 
                         $('.load-container').append(div)
                     }
 
 
                 });
+
+
+
+                $('.pais').live('click', function() {
+
+                    var index = $(this).attr('index');
+
+
+
+                    var title = document.createElement('h1');
+                    var cod = document.createElement('h3');
+
+                    $(title).html(paises[index].name);
+                    $(cod).html(paises[index].code);
+                    
+                    $('.overlay').html('');
+
+                    $('.overlay').fadeOut(function() {
+                        $('.overlay').append(title);
+                        $('.overlay').append(cod);
+                        $('.overlay').fadeIn();
+                    });
+
+
+
+                });
+
             });
 
         </script>
@@ -50,8 +78,10 @@
                 width: 120px;
                 height: 120px;
                 padding: 3px;
+                margin: 5px;
                 border:solid 1px #000;
                 float: left;
+                cursor: pointer;
 
             }
 
@@ -72,11 +102,22 @@
 
             }
 
+            .overlay{
+                display:none;
+                position: absolute;
+                width: 500px;
+                height: 300px;
+                margin: 0 auto;
+                z-index: 999;
+                background: #ff00ff;
+            }
+
         </style>
 
     </head>
     <body>
         <a class="load" href="#">Load content</a>
         <div class="load-container">Loading ... </div>
+        <div class="overlay"></div>
     </body>
 </html>
