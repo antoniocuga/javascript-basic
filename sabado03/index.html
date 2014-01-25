@@ -1,0 +1,44 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+
+                //event.preventDefault();
+
+                $('.load').click(function() {
+                    $.ajax({
+                        url: "file"
+                    }).done(function(msg) {
+                       // $('.load-container').fadeTo(500, function() {
+
+                            msg = JSON.parse(msg);
+
+                            for (var i in msg) {
+
+                                $('.load-container').append(msg[i].name);
+
+                            }
+
+                       // });
+                    });
+
+                });
+            });
+
+        </script>
+
+    </head>
+    <body>
+        <a class="load" href="#">Load content</a>
+        <div class="load-container">Loading ... </div>
+    </body>
+</html>
