@@ -38,3 +38,14 @@
     
 }
 
+
+.producto .producto-cantidad{
+    
+    font-size: 10px;
+    font-weight: bold;
+    display: block;
+    background: #000;
+    color:#FFF;
+    
+}
+
