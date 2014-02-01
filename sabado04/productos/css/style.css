@@ -1,0 +1,40 @@
+#productos{
+    
+    padding: 15px;
+    font-family: "Arial";
+    width: 600px;
+    float: left;
+    
+}
+
+.producto{
+    
+    width: 200px;
+    padding: 10px;
+    float: left;
+    height: 50px;
+    
+}
+
+.producto .producto-name{
+    
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.producto .producto-categoria{
+    
+    font-size: 12px;
+    display: block;
+    
+}
+
+.producto .producto-id{
+    
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    
+}
+
